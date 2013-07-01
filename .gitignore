@@ -1,5 +1,7 @@
 config/database.yml
 config/mail.yml
+config/setup_load_paths.rb
+log/
 *.log
 *~
 db/*.sqlite*
