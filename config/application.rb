@@ -88,7 +88,9 @@ module TypoBlog
       mail_settings = YAML.load(File.read("#{::Rails.root.to_s}/config/mail.yml"))
 
       ActionMailer::Base.delivery_method = mail_settings['method']
-      ActionMailer::Base.server_settings = mail_settings['settings']
+      # ActionMailer::Base.server_settings = mail_settings['settings']
+      server_setting_method = "#{mail_settings['method']}_settings="
+      ActionMailer::Base.send server_setting_method, mail_settings['settings']
     rescue
       # Fall back to using sendmail by default
       ActionMailer::Base.delivery_method = :sendmail

@@ -29,7 +29,7 @@ class EmailNotify
   def self.send_user_create_notification(user)
     begin
       email_notification = NotificationMailer.notif_user(user)
-      email.deliver
+      email_notification.deliver
     rescue => err
       logger.error "Unable to send notification of create user email: #{err.inspect}"
     end
