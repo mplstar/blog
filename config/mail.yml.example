@@ -6,3 +6,6 @@ settings:
 # :authentication:  :login
 # :user_name: bob
 # :password: bobsyouruncle
+# :tls:  true                 
+# :enable_starttls_auto:  true
+# :openssl_verify_mode: none  
